@@ -93,6 +93,7 @@ public class DaoEmpleado extends Conexion {
             emp=new Empleado();
             
             emp.setIdempleado(rs.getInt("idempleado"));
+            emp.setNombre(rs.getString("nombre"));
             emp.setDui(rs.getString("dui"));
             emp.setNit(rs.getString("nit"));
             emp.setLicencia(rs.getInt("licencia"));

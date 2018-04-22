@@ -30,7 +30,7 @@ public class Conexion {
     public void conectar(){
         try {
             Class.forName("org.postgresql.Driver");
-            con=DriverManager.getConnection("postgres", "jdbc:postgresql://localhost:5432/db_v3", "123");   
+            con=DriverManager.getConnection("jdbc:postgresql://localhost:5432/db_stca","postgres", "123");   
         } catch (Exception e) {
         }
     }
