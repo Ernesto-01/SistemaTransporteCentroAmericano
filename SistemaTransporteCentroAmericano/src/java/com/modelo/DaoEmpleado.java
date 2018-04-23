@@ -45,11 +45,11 @@ public class DaoEmpleado extends Conexion {
             //update empleado set nombre='Pedro', dui='123',nit='4587', licencia=1,direccion='San Salvador',tel='2323-0252' where idempleado=1;
             String sql="update empleado set nombre=?, dui=?,nit=?, licencia=?,direccion=?,tel=? where idempleado=?";
             PreparedStatement ps=this.getCon().prepareStatement(sql);
-            ps.setString(1, emp.getNombre());
-            ps.setString(2, emp.getDireccion());
-            ps.setString(3, emp.getDui());
-            ps.setString(4, emp.getNit());
-            ps.setInt(5, emp.getLicencia());
+            ps.setString(1, emp.getNombre());            
+            ps.setString(2, emp.getDui());
+            ps.setString(3, emp.getNit());
+            ps.setInt(4, emp.getLicencia());
+            ps.setString(5, emp.getDireccion());
             ps.setString(6, emp.getTel());
             ps.setInt(7, emp.getIdempleado());
             
@@ -85,7 +85,7 @@ public class DaoEmpleado extends Conexion {
         
         try {
         Empleado emp;
-        String sql="select * from empleado";
+        String sql="select * from empleado order by idempleado asc";
         PreparedStatement ps=this.getCon().prepareStatement(sql);
         ResultSet rs=ps.executeQuery();
         
